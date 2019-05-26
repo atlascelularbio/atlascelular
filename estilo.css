@@ -1,0 +1,67 @@
+body {margin:0;}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+#tituloModal {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20;
+}
+#descricaoModal {
+  text-align: justify;
+  padding: 2px;
+}
+#botaoFecharModal {
+  margin-top: 0px;
+  margin-left: 0px;
+}
+#modalConteudo {
+  display: none;
+  background-color: #fefefe;
+  margin: auto;
+  height: 30%;
+  border: 1px solid #888;
+  width: 60%;
+  border-radius: 3px;
+}
+#modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>  
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <script src = "logica.js"></script>
+    <!-- Navbar -->
+    <ul>
+            <li><a class="procarionte" >Procarionte</a></li>
+            <li><a href="#animal">Animal</a></li>
+            <li><a href="#vegetal">Vegetal</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+          </ul>
+    <!-- fim navbar -->
+
+     <!-- modal -->
+    <div id="modal" onclick="fecharModal()">
+        <div id="modalConteudo">
+          <span id="botaoFecharModal" onclick="fecharModal()">[x]</span><br />
+          <span id="tituloModal">a</span><br />
+          <span id="descricaoModal">b</span><br />
+        </div>
+      </div>
+      <div id="conteudo">
+    <!-- fim modal -->
+
+    <img src="img/procarionte.png" usemap="#image-map" onclick="abrirModal(biblioteca[0][0],biblioteca[0][1])">
+
+<map name="image-map">
+    <area target="" alt="teste" title="" onclick="abrirModal(0)" coords="376,246,424,203" shape="rect">
+    <area target="" alt="" title="" onclick="abrirModal(1)" coords="263,353,15" shape="circle">
+    <area target="" alt="" title="" onclick="abrirModal(1)" coords="197,257,15" shape="circle">
+    <area target="" alt="" title="" onclick="abrirModal(1)" coords="423,339,12" shape="circle">
+    <area target="" alt="" title="" onclick="abrirModal(1)" coords="471,332,12" shape="circle">
+    <area target="" alt="" title="" onclick="abrirModal(1)" coords="439,218,12" shape="circle">
+    <area target="" alt="" title="" onclick="abrirModal(2)" coords="219,259,468,311" shape="rect">
+    <area target="" alt="" title="" onclick="abrirModal(3)" coords="154,299,127,299,96,300,78,304,46,303,26,292,15,276,7,251,8,227,25,211,48,195,67,180,78,163,75,132,62,114,43,100,33,84,30,58,39,43,50,36,61,32,66,20,64,4,73,12,68,32,61,40,47,46,38,58,42,72,46,89,55,98,67,103,82,116,87,128,92,146,91,171,79,187,57,203,29,224,19,256,32,277,48,294,76,290,95,283,114,284,135,285,145,284,156,289,78,113" shape="poly">
+    <area target="" alt="" title="" onclick="abrirModal(4)" coords="343,338,308,360" shape="rect">
+    <area target="" alt="" title="" onclick="abrirModal(4)" coords="495,325,510,293" shape="rect">
+    <area target="" alt="" title="" onclick="abrirModal(4)" coords="474,272,486,308" shape="rect">
+    <area target="" alt="" title="" onclick="abrirModal(4)" coords="273,227,311,245" shape="rect">
+    <area target="" alt="" title="" onclick="abrirModal(5)" coords="218,349,185,309" shape="rect">
+</map>
+
+</body>
+</html>
