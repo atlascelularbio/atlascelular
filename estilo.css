@@ -9,6 +9,7 @@ ul {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 33;
 }
 
 li {
@@ -64,4 +65,39 @@ li a:hover:not(.active) {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
+}
+map area:link {
+  outline: red auto 5px;
+}
+#imagem{
+  position: absolute;
+}
+#svg{
+  position: absolute
+}
+.teste {
+  animation: mymove 1s infinite;
+
+}
+@-webkit-keyframes mymove {
+  0% {
+    opacity: 0.1;
+    fill: white;
+  }
+  25% {
+    opacity: 0.3;
+    fill: white;
+  }
+  50% {
+    opacity: 0.5;
+    fill: white;
+  }
+  75% {
+    opacity: 0.3;
+    fill: white;
+  }
+  100% {
+    opacity: 0.1;
+    fill: white;
+  }
 }
