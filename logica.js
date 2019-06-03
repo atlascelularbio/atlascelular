@@ -1,6 +1,11 @@
 biblioteca = [
-  {"estrutura": "Plasmídeo", "descricao" : "Diz-se de ou molécula extracromossômica de ADN, ger. circular, encontrada em bactérias"},
-  {"estrutura": "teste", "descricao" : "d"}
+  {"estrutura": "Plasmídeo", "descricao" : "São moléculas circulares duplas de DNA capazes de se reproduzir independentemente do DNA cromossômico. Armazenam pequenas quantidades de material genético."},
+  {"estrutura": "Nucleóide", "descricao" : "Também chamado de cromatina, é a região da célula onde se localiza o material genético (DNA). Na célula procarionte não é envolvido por membrana"},
+  {"estrutura": "Flagelo" , "descricao" : "Filamento oco que favorece a locomoção celular"},
+  {"estrutura": "Cílio" , "descricao" : "Estruturas semelhantes ao flagelo, porém numerosas e curtas, que favorecem a locomoção celular"},
+  {"estrutura": "Ribossomos" , "descricao" : "Pequenas unidades livres no citoplasma, responsáveis pela síntese proteica da célula"},
+  {"estrutura": "Membrana Plasmática" , "descricao" : "Pode ser dividida em cápsula: Estrutura mucosa, composta principalmente por polissacarídeos. Favorece a adesão às superfícies, impede a desidratação e dá proteção à célula... E também em parede celular: Estrutura localizada no exterior da membrana celular. Confere rigidez e determina a forma da célula. Protege e controla as trocas de substâncias com o meio ambiente"},
+  {"estrutura": "Granos de alimento" , "descricao" : "Pequenas partículas sólidas que entraram na célula por meio de endocitose, e contém a energia necessária para o funcionamento normal da célula"}
 ]
   
 function abrirModal(posicao, id) {
@@ -32,7 +37,7 @@ function criarSvg(){
   
   // Criando elementos do svg
 
-  for (let index = 0; index < 12; index++) {
+  for (let index = 0; index < 31; index++) {
     elemento = document.getElementById(index);
     coords = elemento.coords.split(",");
     title = elemento.title;
@@ -56,8 +61,7 @@ function criarSvg(){
       ' '+ X2 +','+Yi+
       ' '+Xf+','+ Yf +
       ' '+Xi+','+Yf +
-     // '" style="fill:lime;stroke:purple;stroke-width:1" />  '
-     '" ' + style  + '" />  '
+     '" ' + style  + '" />'
 
     }
     if(document.getElementById(index).shape == 'poly'){
@@ -78,17 +82,18 @@ function criarSvg(){
   }
   
   html += '</svg>'
-  // console.log(html)
-  document.getElementById('svg').innerHTML = html;
-  
+  document.getElementById('svg').innerHTML = html;  
+}
+
+function descricaoFlutuante(descricao){
+  alert(descricao)
 }
 
 function piscar(id){
-
   elem = document.getElementById(id);
   title = elem.getAttribute('title');
   posicaoBiblioteca = biblioteca.map(function(e) { return e.estrutura; }).indexOf(title);
-  console.log(posicaoBiblioteca);
+
   if (posicaoBiblioteca != -1) {
     abrirModal(posicaoBiblioteca , id)    
   }
