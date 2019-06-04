@@ -25,6 +25,14 @@ function fecharModal() {
 }
 
 function criarSvg(){
+  // Tamanho da imagem, que pode ser modificado, o zoom que ela recebe
+  var sc = window.getComputedStyle(document.getElementById('imagem') , null)
+  sc = (sc.getPropertyValue('-webkit-transform'))
+  sc = sc.split ('(') [1];
+  sc = sc.split (')')[0];
+
+  escalaAtual = Math.sqrt((sc.split(",")[0] * sc.split(",")[0] + sc.split(",")[1] * sc.split(",")[1]))
+
   w = document.getElementById('imagem').clientWidth;
   h = document.getElementById('imagem').clientHeight;
 
@@ -32,8 +40,11 @@ function criarSvg(){
   var strokeWidth = 3;
   var stroke = 'none'
   var style = 'style="fill:'+ fill + ';stroke-width:' + strokeWidth + ';stroke:'+ stroke + '"';
+  var viewbox = '"0 0 ' + w + ' ' + h + '"';
 
+  // var html = '<svg id = "svgImagem" stroke-width="3" viewbox = ' + viewbox + '> ';
   var html = '<svg stroke-width="3" width="' + w + '" height="' + h + '"> ';
+
   
   // Criando elementos do svg
 
@@ -56,7 +67,7 @@ function criarSvg(){
 
       // Criar poligono
 
-      html += ' <polygon title = "' + title + '"onclick = "piscar(\'' + 'i' + index +'\')" id = "i'+ index +'" points="'
+      html += ' <polygon  title = "' + title + '"onclick = "piscar(\'' + 'i' + index +'\')" id = "i'+ index +'" points="'
       + Xi +','+ Yi +
       ' '+ X2 +','+Yi+
       ' '+Xf+','+ Yf +
@@ -72,17 +83,18 @@ function criarSvg(){
         }else{
           html += coords[i] + " "
         }    
-        // html += '"200,10 250,190 160,210"'
       }
       html += '"' +style + ' />        Sorry, your browser does not support inline SVG. '
     }
     if (document.getElementById(index).shape == 'circle'){
       html += '<circle title = "' + title + '" onclick = "piscar(\'' + 'i' + index +'\')" id = "i'+ index +'" cx="' + coords[0] + '" cy="' + coords[1] + '" r="' + coords[2] + '" stroke="' + stroke + '" stroke-width="'+ strokeWidth + '" fill="' + fill +' " />'
     }
+
   }
   
   html += '</svg>'
-  document.getElementById('svg').innerHTML = html;  
+  document.getElementById('svg').innerHTML = html;
+   
 }
 
 function descricaoFlutuante(descricao){
@@ -104,4 +116,22 @@ function piscar(id){
       .classList.remove("teste");
   } catch {}
   document.getElementById(id).classList.add("teste");
+}
+
+function zoom(v){
+ if(v == "+"){
+   escalaAtual += 0.1;
+    document.getElementById("imagem").style.transform = "scale(" + escalaAtual  + ")";
+    document.getElementById("svg").style.transform = "scale(" + escalaAtual  + ")";   
+  }else{
+    if(escalaAtual > 0.2){
+      escalaAtual -= 0.1;
+     }else{
+       if(escalaAtual > 0.5){
+        escalaAtual -= 0.5;
+       }
+     }
+  document.getElementById("imagem").style.transform = "scale(" + escalaAtual  + ")"  ;
+  document.getElementById("svg").style.transform = "scale(" + escalaAtual  + ")"  ;
+ }
 }
