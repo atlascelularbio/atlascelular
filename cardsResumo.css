@@ -36,7 +36,7 @@
 @media screen and (max-width: 1000px) {    
     .card{
         width: 94vw;
-        height: 100vh;
+        height: 85vh;
         margin: 3vw;  
     } 
     .espaco{
@@ -57,7 +57,7 @@
      }
      .card{
          padding-top: 3px;
-         height: 80vh;
+         height: 90vh;
          width: 96vw;
      }
  }
