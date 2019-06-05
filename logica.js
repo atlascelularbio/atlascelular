@@ -1,23 +1,26 @@
 biblioteca = [
-  {"estrutura": "Plasmídeo", "descricao" : "São moléculas circulares duplas de DNA capazes de se reproduzir independentemente do DNA cromossômico. Armazenam pequenas quantidades de material genético."},
-  {"estrutura": "Nucleóide", "descricao" : "Também chamado de cromatina, é a região da célula onde se localiza o material genético (DNA). Na célula procarionte não é envolvido por membrana"},
-  {"estrutura": "Flagelo" , "descricao" : "Filamento oco que favorece a locomoção celular"},
-  {"estrutura": "Cílio" , "descricao" : "Estruturas semelhantes ao flagelo, porém numerosas e curtas, que favorecem a locomoção celular"},
-  {"estrutura": "Ribossomo" , "descricao" : "Pequenas unidades livres no citoplasma, responsáveis pela síntese proteica da célula"},
-  {"estrutura": "Membrana Plasmática" , "descricao" : "Pode ser dividida em cápsula: Estrutura mucosa, composta principalmente por polissacarídeos. Favorece a adesão às superfícies, impede a desidratação e dá proteção à célula... E também em parede celular: Estrutura localizada no exterior da membrana celular. Confere rigidez e determina a forma da célula. Protege e controla as trocas de substâncias com o meio ambiente"},
-  {"estrutura": "Granos de alimento" , "descricao" : "Pequenas partículas sólidas que entraram na célula por meio de endocitose, e contém a energia necessária para o funcionamento normal da célula"},
+  {"estrutura": "Plasmídeo", "imagem": "plasmideo.png", "descricao" : "São moléculas circulares duplas de DNA capazes de se reproduzir independentemente do DNA cromossômico. Armazenam pequenas quantidades de material genético."},
+  {"estrutura": "Nucleóide", "imagem": "nucleoide.png", "descricao" : "Também chamado de cromatina, é a região da célula onde se localiza o material genético (DNA). Na célula procarionte não é envolvido por membrana"},
+  {"estrutura": "Flagelo" , "imagem": "flagelo.png", "descricao" : "Filamento oco que favorece a locomoção celular"},
+  {"estrutura": "Cílio" , "imagem": "cilio.jpg", "descricao" : "Estruturas semelhantes ao flagelo, porém numerosas e curtas, que favorecem a locomoção celular"},
+  {"estrutura": "Ribossomo" , "imagem": "ribossomo.jpg", "descricao" : "Pequenas unidades livres no citoplasma, responsáveis pela síntese proteica da célula"},
+  {"estrutura": "Membrana Plasmática" , "imagem": "membrana.jpg", "descricao" : "Pode ser dividida em cápsula: Estrutura mucosa, composta principalmente por polissacarídeos. Favorece a adesão às superfícies, impede a desidratação e dá proteção à célula... E também em parede celular: Estrutura localizada no exterior da membrana celular. Confere rigidez e determina a forma da célula. Protege e controla as trocas de substâncias com o meio ambiente"},
+  {"estrutura": "Granos de alimento" ,"imagem": "alimento.jpg", "descricao" : "Pequenas partículas sólidas que entraram na célula por meio de endocitose, e contém a energia necessária para o funcionamento normal da célula"},
 
-  {"estrutura": "Complexo de golgi", "descricao": ""},
-  {"estrutura": "Mitocôndria", "descricao": ""},
-  {"estrutura": "Centríolo", "descricao": ""},
-  {"estrutura": "Retículo endoplasmático", "descricao": ""},
-  {"estrutura": "Lisossomos", "descricao": ""},
+  {"estrutura": "Complexo de golgi", "imagem": "golgi.jpg", "descricao": ""},
+  {"estrutura": "Mitocôndria","imagem": "mitocondria.png", "descricao": ""},
+  {"estrutura": "Centríolo","imagem": "centriolo.png", "descricao": ""},
+  {"estrutura": "Retículo endoplasmático","imagem": "reticulo.jpg", "descricao": ""},
+  {"estrutura": "Lisossomos", "imagem": "lisossomo.jpg", "descricao": ""},
 
-  {"estrutura": "Cloroplasto", "descricao": ""},
-  {"estrutura": "Parede celular", "descricao": ""},
-  {"estrutura": "Núcleo", "descricao": ""},
-  {"estrutura": "Vacúolo", "descricao": ""},
-  {"estrutura": "", "descricao": ""},
+  {"estrutura": "Cloroplasto", "imagem": "cloroplasto.png", "descricao": ""},
+  {"estrutura": "Parede celular","imagem": "parede.jpg", "descricao": ""},
+  {"estrutura": "Núcleo","imagem": "nucleo.jpg", "descricao": ""},
+  {"estrutura": "Vacúolo","imagem": "vacuolo.jpg", "descricao": ""},
+
+  {"estrutura": "Citoplasma", "imagem": "citoplasma.jpg", "descricao": ""},
+  {"estrutura": "Peroxissomos","imagem": "peroxissomo.jpg", "descricao": ""},
+  // {"estrutura": "", "descricao": ""},
 ]
 MensagemExibida = false;
 
