@@ -166,9 +166,10 @@ li a:hover:not(.active) {
   margin-left: -22vw;
   }
   #modalConteudo {
-    height: 69vh;
-    width: 93vh;
-    margin-top: 3vh;
+    height: 57vh;
+    width: 74vw;
+    margin-top: -2vh;
+    margin-left: 6vw;
 }
 li{
   font-size: 3vw

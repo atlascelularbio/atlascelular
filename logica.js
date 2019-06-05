@@ -12,7 +12,7 @@ biblioteca = [
   {"estrutura": "Núcleo","imagem": "nucleo.jpg", "descricao": "Talvez a região mais importante de toda a célula, já que essa contém o DNA, estrutura responsável por indicar como as proteínas serão produzidas, e que consequentimente ira dar as caracteristica de cada ser, seja ele animal, vegetal, bacterias, etc."},
   
   {"estrutura": "Citoplasma", "imagem": "citoplasma.jpg", "descricao": "Fluido de aparência gelatinosa, rico em moléculas orgânicas e organelas, presente no interior das células e que circunda o núcleo"},
-  {"estrutura": "Peroxissomos","imagem": "peroxissomo.jpg", "descricao": "São estruturas ricas em enzimas que qubram a água oxigenada, toxica aos seres vivos, transformando essa em moleculas de água e de oxigênio"},
+  {"estrutura": "Peroxissomos","imagem": "peroxissomo.jpg", "descricao": "São estruturas ricas em enzimas que qubram a água oxigenada, toxica aos seres vivos, transformando essa em moléculas de água e de oxigênio"},
   
   
   {"estrutura": "Vacúolo","imagem": "vacuolo.jpg", "descricao": "São espaços, envolvidos por membrana, em cujo interior podem ser armazenadas substâncias como a seiva, além disso, tem como função regular o pH e a entrada de água, através do controle osmótico. Com isso, os vacúolos controlam a turgidez da célula."},
@@ -55,7 +55,7 @@ function criarSvg(limiteCriacao){
 
   var fill = 'transparent';
   var strokeWidth = 3;
-  var stroke = 'black'
+  var stroke = 'none'
   var style = 'style="fill:'+ fill + ';stroke-width:' + strokeWidth + ';stroke:'+ stroke + '"';
   var viewbox = '"0 0 ' + w + ' ' + h + '"';
 
