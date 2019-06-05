@@ -47,7 +47,9 @@
         width: 45vw;
         margin-left: 25vw
     }  
-   
+   li{
+       font-size: 4vw
+   }
  }
 
  @media screen and (max-height: 450px) { 

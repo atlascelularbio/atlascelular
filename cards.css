@@ -33,9 +33,9 @@
        height: 30vh;
        width: 20vw;
        margin-left: 6vw;
-   }    
+   }
 }
-@media screen and (max-width: 1000px) {    
+@media screen and (max-width: 1000px) {
     .card{
         width: 94vw;
         height: 60vh;
@@ -47,7 +47,7 @@
     .imagemCard{
         height: 30vh;
         width: 45vw;
-        margin-left: 25vw
+        margin-left: 5vw
     }
     #git{
         visibility: hidden;
@@ -65,8 +65,8 @@
          width: 30vw
      }
      .card{
-         height: 75vh;
-         height: 49vw
+        height: 75vh;
+        width: 42vw;
      }
      #git{
         visibility: hidden;

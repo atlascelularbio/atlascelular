@@ -169,5 +169,8 @@ li a:hover:not(.active) {
     width: 93vh;
     margin-top: 3vh;
 }
+li{
+  font-size: 4vw
+}
   
 }
