@@ -3,11 +3,12 @@ biblioteca = [
   {"estrutura": "Nucleóide", "descricao" : "Também chamado de cromatina, é a região da célula onde se localiza o material genético (DNA). Na célula procarionte não é envolvido por membrana"},
   {"estrutura": "Flagelo" , "descricao" : "Filamento oco que favorece a locomoção celular"},
   {"estrutura": "Cílio" , "descricao" : "Estruturas semelhantes ao flagelo, porém numerosas e curtas, que favorecem a locomoção celular"},
-  {"estrutura": "Ribossomos" , "descricao" : "Pequenas unidades livres no citoplasma, responsáveis pela síntese proteica da célula"},
+  {"estrutura": "Ribossomo" , "descricao" : "Pequenas unidades livres no citoplasma, responsáveis pela síntese proteica da célula"},
   {"estrutura": "Membrana Plasmática" , "descricao" : "Pode ser dividida em cápsula: Estrutura mucosa, composta principalmente por polissacarídeos. Favorece a adesão às superfícies, impede a desidratação e dá proteção à célula... E também em parede celular: Estrutura localizada no exterior da membrana celular. Confere rigidez e determina a forma da célula. Protege e controla as trocas de substâncias com o meio ambiente"},
   {"estrutura": "Granos de alimento" , "descricao" : "Pequenas partículas sólidas que entraram na célula por meio de endocitose, e contém a energia necessária para o funcionamento normal da célula"}
 ]
-  
+MensagemExibida = false;
+
 function abrirModal(posicao, id) {
   document.getElementById("modal").style.display = "block";
   document.getElementById("modalConteudo").style.display = "block";
@@ -25,6 +26,7 @@ function fecharModal() {
 }
 
 function criarSvg(){
+  
   // Tamanho da imagem, que pode ser modificado, o zoom que ela recebe
   var sc = window.getComputedStyle(document.getElementById('imagem') , null)
   sc = (sc.getPropertyValue('-webkit-transform'))
@@ -43,7 +45,7 @@ function criarSvg(){
   var viewbox = '"0 0 ' + w + ' ' + h + '"';
 
   // var html = '<svg id = "svgImagem" stroke-width="3" viewbox = ' + viewbox + '> ';
-  var html = '<svg stroke-width="3" width="' + w + '" height="' + h + '"> ';
+  var html = '<svg id = "svgImagem" stroke-width="3" width="' + w + '" height="' + h + '"> ';
 
   
   // Criando elementos do svg
@@ -67,7 +69,7 @@ function criarSvg(){
 
       // Criar poligono
 
-      html += ' <polygon  title = "' + title + '"onclick = "piscar(\'' + 'i' + index +'\')" id = "i'+ index +'" points="'
+      html += ' <polygon class = "'+ title+ '" title = "' + title + '"onclick = "piscar(\'' + 'i' + index +'\')" id = "i'+ index +'" points="'
       + Xi +','+ Yi +
       ' '+ X2 +','+Yi+
       ' '+Xf+','+ Yf +
@@ -76,7 +78,7 @@ function criarSvg(){
 
     }
     if(document.getElementById(index).shape == 'poly'){
-      html += ' <polygon title = "'+ title +'" onclick = "piscar(\'' + 'i' + index +'\')" id = "i'+ index +'" points="';
+      html += ' <polygon class="' + title + '" title = "'+ title +'" onclick = "piscar(\'' + 'i' + index +'\')" id = "i'+ index +'" points="';
       for (let i = 0; i < coords.length; i++) {
         if (i%2 == 0) {
           html += coords[i] + ","
@@ -87,13 +89,24 @@ function criarSvg(){
       html += '"' +style + ' />        Sorry, your browser does not support inline SVG. '
     }
     if (document.getElementById(index).shape == 'circle'){
-      html += '<circle title = "' + title + '" onclick = "piscar(\'' + 'i' + index +'\')" id = "i'+ index +'" cx="' + coords[0] + '" cy="' + coords[1] + '" r="' + coords[2] + '" stroke="' + stroke + '" stroke-width="'+ strokeWidth + '" fill="' + fill +' " />'
+      html += '<circle class = "' + title + '" title = "' + title + '" onclick = "piscar(\'' + 'i' + index +'\')" id = "i'+ index +'" cx="' + coords[0] + '" cy="' + coords[1] + '" r="' + coords[2] + '" stroke="' + stroke + '" stroke-width="'+ strokeWidth + '" fill="' + fill +' " />'
     }
 
   }
   
   html += '</svg>'
   document.getElementById('svg').innerHTML = html;
+
+   // Verificar posição da tela
+   var w = window,
+   e = document.documentElement,
+   g = document.getElementsByTagName('body')[0],
+   x = w.innerWidth || e.clientWidth || g.clientWidth,
+   y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+   if( x < y && x < 700 && y < 800 && MensagemExibida == false){
+     alert("Para uma melhor experiência recomenda-se deixar a tela na posição horizontal")
+     MensagemExibida = true
+   }
    
 }
 
@@ -103,26 +116,34 @@ function descricaoFlutuante(descricao){
 
 function piscar(id){
   elem = document.getElementById(id);
-  title = elem.getAttribute('title');
-  posicaoBiblioteca = biblioteca.map(function(e) { return e.estrutura; }).indexOf(title);
-
+  titulo = elem.getAttribute('title');
+  posicaoBiblioteca = biblioteca.map(function(e) { return e.estrutura; }).indexOf(titulo);
+  
   if (posicaoBiblioteca != -1) {
     abrirModal(posicaoBiblioteca , id)    
   }
 
-  try {
-    document
-      .getElementById(document.getElementsByClassName("teste")[0].id)
-      .classList.remove("teste");
+  try {    
+    var elements = document.getElementsByClassName('teste');
+    while(elements.length > 0){
+      elements[0].classList.remove('teste');
+  }
+
   } catch {}
-  document.getElementById(id).classList.add("teste");
+
+  elementosSelecionados = document.getElementsByClassName(titulo)
+  for (f = 0; f < elementosSelecionados.length; f++) {
+    a = elementosSelecionados[f];
+    elementosSelecionados[f].classList.add("teste")
+  }
 }
+
 
 function zoom(v){
  if(v == "+"){
-   escalaAtual += 0.1;
+    escalaAtual += 0.1;
     document.getElementById("imagem").style.transform = "scale(" + escalaAtual  + ")";
-    document.getElementById("svg").style.transform = "scale(" + escalaAtual  + ")";   
+    document.getElementById("svg").style.transform = "scale(" + escalaAtual  + ")";
   }else{
     if(escalaAtual > 0.2){
       escalaAtual -= 0.1;
