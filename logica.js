@@ -17,7 +17,6 @@ function abrirModal(posicao, id) {
 
   var shape = document.getElementById(id).shape;
   var coords = document.getElementById(id).coords;
-  criarSvg(shape, coords);
 }
   
 function fecharModal() {
@@ -25,8 +24,7 @@ function fecharModal() {
   document.getElementById("modalConteudo").style.display = "none";
 }
 
-function criarSvg(){
-  
+function criarSvg(limiteCriacao){  
   // Tamanho da imagem, que pode ser modificado, o zoom que ela recebe
   var sc = window.getComputedStyle(document.getElementById('imagem') , null)
   sc = (sc.getPropertyValue('-webkit-transform'))
@@ -49,6 +47,8 @@ function criarSvg(){
 
   
   // Criando elementos do svg
+
+  console.log(limiteCriacao)
 
   for (let index = 0; index < 31; index++) {
     elemento = document.getElementById(index);

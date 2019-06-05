@@ -1,5 +1,10 @@
 body {margin:0}
-
+#cards{
+  margin-top: 3vh;
+  margin-left: 2px;
+  text-align: justify;
+  float: left;
+}
 ul {
   list-style-type: none;
   margin: 0;
