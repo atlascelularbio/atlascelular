@@ -55,7 +55,7 @@ function criarSvg(limiteCriacao){
 
   var fill = 'transparent';
   var strokeWidth = 3;
-  var stroke = 'none'
+  var stroke = 'black'
   var style = 'style="fill:'+ fill + ';stroke-width:' + strokeWidth + ';stroke:'+ stroke + '"';
   var viewbox = '"0 0 ' + w + ' ' + h + '"';
 
