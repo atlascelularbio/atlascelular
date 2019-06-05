@@ -48,11 +48,18 @@
         margin-left: 25vw
     }  
    li{
-       font-size: 4vw
+       font-size: 3.3vw
    }
  }
 
  @media screen and (max-height: 450px) { 
+    #index{
+      height: 7vh;
+      width: 4vw;
+    }
+    li{
+        font-size: 3.3vw
+    }
      .imagemCard{
          height: 25vh;
          width: 30vw
