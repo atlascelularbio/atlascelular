@@ -5,7 +5,19 @@ biblioteca = [
   {"estrutura": "Cílio" , "descricao" : "Estruturas semelhantes ao flagelo, porém numerosas e curtas, que favorecem a locomoção celular"},
   {"estrutura": "Ribossomo" , "descricao" : "Pequenas unidades livres no citoplasma, responsáveis pela síntese proteica da célula"},
   {"estrutura": "Membrana Plasmática" , "descricao" : "Pode ser dividida em cápsula: Estrutura mucosa, composta principalmente por polissacarídeos. Favorece a adesão às superfícies, impede a desidratação e dá proteção à célula... E também em parede celular: Estrutura localizada no exterior da membrana celular. Confere rigidez e determina a forma da célula. Protege e controla as trocas de substâncias com o meio ambiente"},
-  {"estrutura": "Granos de alimento" , "descricao" : "Pequenas partículas sólidas que entraram na célula por meio de endocitose, e contém a energia necessária para o funcionamento normal da célula"}
+  {"estrutura": "Granos de alimento" , "descricao" : "Pequenas partículas sólidas que entraram na célula por meio de endocitose, e contém a energia necessária para o funcionamento normal da célula"},
+
+  {"estrutura": "Complexo de golgi", "descricao": ""},
+  {"estrutura": "Mitocôndria", "descricao": ""},
+  {"estrutura": "Centríolo", "descricao": ""},
+  {"estrutura": "Retículo endoplasmático", "descricao": ""},
+  {"estrutura": "Lisossomos", "descricao": ""},
+
+  {"estrutura": "Cloroplasto", "descricao": ""},
+  {"estrutura": "Parede celular", "descricao": ""},
+  {"estrutura": "Núcleo", "descricao": ""},
+  {"estrutura": "Vacúolo", "descricao": ""},
+  {"estrutura": "", "descricao": ""},
 ]
 MensagemExibida = false;
 
@@ -50,7 +62,7 @@ function criarSvg(limiteCriacao){
 
   console.log(limiteCriacao)
 
-  for (let index = 0; index < 31; index++) {
+  for (let index = 0; index < limiteCriacao; index++) {
     elemento = document.getElementById(index);
     coords = elemento.coords.split(",");
     title = elemento.title;
