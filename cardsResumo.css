@@ -50,14 +50,13 @@
    
  }
 
- @media screen and (max-height: 450px) {
-    
+ @media screen and (max-height: 450px) {    
      .imagemCard{
          height: 25vh;
          width: 30vw
      }
      .card{
-         height: 75vh;
-         height: 49vw
+         height: 80vh;
+         width: 96vw;
      }
  }
